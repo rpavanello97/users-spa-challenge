@@ -1,0 +1,25 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Patricia Boyle",
+        "profileUrl": "",
+        "email": "teste@teste.com",
+        "addedOn": "2014-06-11T03:00:00.000Z"
+      },
+      {
+        "id": 2,
+        "name": "Nathan Brooks",
+        "profileUrl": "",
+        "email": "teste@teste.com",
+        "addedOn": "2016-02-24T03:00:00.000Z"
+      },
+      {
+        "id": 3,
+        "name": "Nathan Brooks",
+        "profileUrl": "",
+        "email": "teste@teste.com",
+        "addedOn": "2015-04-15T03:00:00.000Z"
+      }
+    ]
+}
