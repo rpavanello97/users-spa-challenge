@@ -13,8 +13,8 @@ import { AlertData } from 'src/app/shared/models/alert-data.model';
 })
 export class UsersListComponent implements OnInit {
 
-  users: User[] = [];
-  id!: number;
+  users: User[] = []
+  id!: number
 
   constructor(
     private userService: UserService,
@@ -22,20 +22,19 @@ export class UsersListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getUsers()
+  }
 
+  getUsers() {
     this.userService.get().subscribe((users: User[]) => {
       this.users.push(...users);
     }, (err: Error) => {
       alert(err.stack)
-    })
+    });
   }
 
-  getIdToDelete(id: number): void {
-    this.id = id;
-    this.openDialog();
-  }
-
-  openDialog(): void {
+  deleteUser(id: number): void {
+    this.id = id
 
     const data: AlertData = {
       title: "Are you sure to delete the User?",
@@ -44,18 +43,17 @@ export class UsersListComponent implements OnInit {
       positiveButton: "Yes"
     }
 
-    const dialogRef = this.dialog.open(AlertComponent, {
-      width: '500px',
-      data
-    });
+    const dialogRef = this.dialog.open(AlertComponent, { width: '500px', data })
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.deleteById(this.id)
+        this.userService.deleteById(this.id).subscribe(() => {
+          this.users = this.users.filter(item => item.id !== this.id)
+          //this.getUsers()
+        });
       } else {
         alert("Recused")
       }
     });
   }
-
 }
