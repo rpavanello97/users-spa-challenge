@@ -26,8 +26,8 @@
             </button>
         </div>
         <div>
-            <button color="warn" mat-stroked-button>
-                <mat-icon>person_remove</mat-icon>
+            <button color="warn" (click)="getIdToDelete(user.id)" mat-stroked-button>
+                <mat-icon>person_remove</mat-icon>                
             </button>
         </div>        
     </div>

@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>{{alertData.title}}</h1>
+<div mat-dialog-content>  
+    <mat-label>{{alertData.description}}</mat-label>  
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">{{alertData.negativeButton}}</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{alertData.positiveButton}}</button>
+</div>
