@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UsersListComponent } from './users-list/users-list.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ]
 })
 export class UserModule { }

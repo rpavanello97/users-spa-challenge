@@ -9,8 +9,11 @@
             <img [src]="user.profileUrl" [alt]="user.name">
         </div>
         <div class="informations">
-            <label> {{ user.name }} </label>
-            <label> {{ user.email }} </label>
+            <label class="name"> {{ user.name }} </label>
+            <div class= "email">
+                <mat-icon color="accent">email</mat-icon>
+                <label>{{ user.email }}</label>
+            </div>
             <div>
                 <label> Added On:</label>
                 <label> {{ user.addedOn | date : 'dd/MM/yyyy'}}</label>
@@ -18,10 +21,19 @@
             <label> {{ user.role }} </label>
         </div>
         <div class="buttons">
-            <button color="primary" mat-raised-button>Editar</button>
+            <button color="primary" mat-raised-button>
+                <mat-icon>mode_edit</mat-icon>
+            </button>
         </div>
         <div>
-            <button color="accent" mat-flat-button>Excluir</button>
-        </div>
+            <button color="warn" mat-stroked-button>
+                <mat-icon>person_remove</mat-icon>
+            </button>
+        </div>        
+    </div>
+    <div class="footer-bar">
+        <button color="accent" mat-raised-button>
+            <mat-icon>person_add</mat-icon>
+        </button>
     </div>
 </div>
