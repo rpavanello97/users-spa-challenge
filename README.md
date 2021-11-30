@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Installed:
     Angular Material
     Json Server
+    Images got from https://unsplash.com/s/photos/person

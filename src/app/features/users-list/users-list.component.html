@@ -1,1 +1,27 @@
-<p>users-list works!</p>
+<div class="container">
+    <div class="user-bar">
+        <label class="user-bar-photo">Photo</label>
+        <label class="user-bar-details">Details</label>
+        <label class="user-bar-actions">Actions</label>
+    </div>
+    <div class="user" *ngFor="let user of users">
+        <div class="photo">
+            <img [src]="user.profileUrl" [alt]="user.name">
+        </div>
+        <div class="informations">
+            <label> {{ user.name }} </label>
+            <label> {{ user.email }} </label>
+            <div>
+                <label> Added On:</label>
+                <label> {{ user.addedOn | date : 'dd/MM/yyyy'}}</label>
+            </div>
+            <label> {{ user.role }} </label>
+        </div>
+        <div class="buttons">
+            <button color="primary" mat-raised-button>Editar</button>
+        </div>
+        <div>
+            <button color="accent" mat-flat-button>Excluir</button>
+        </div>
+    </div>
+</div>
