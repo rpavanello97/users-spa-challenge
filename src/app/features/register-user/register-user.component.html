@@ -4,10 +4,12 @@
     </div>
     <form class="user" autocomplete="off" novalidate [formGroup]="user" (ngSubmit)="submit()">
         <mat-card>
-            <mat-card-content>
+            <mat-card-content class="mat-card-content-fields full-width">
                 <div>
                     <mat-form-field class="full-width">
                         <input matInput placeholder="Name *" name="name" formControlName="name">
+                        <mat-error *ngIf="validation.checkAllErrors(controls.name, 'required')">This field is required
+                        </mat-error>
                     </mat-form-field>
                 </div>
                 <div>
@@ -19,6 +21,8 @@
                     <mat-form-field class="full-width">
                         <mat-label>E-mail *</mat-label>
                         <input matInput placeholder="example@example.com" name="email" formControlName="email">
+                        <mat-error *ngIf="validation.checkAllErrors(controls.email, 'required')">This field is required
+                        </mat-error>
                     </mat-form-field>
                 </div>
                 <div>
@@ -27,17 +31,28 @@
                             name="addedOn" formControlName="addedOn" readonly>
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker color="accent"></mat-datepicker>
+                        <mat-error *ngIf="validation.checkAllErrors(controls.addedOn, 'required')">This field is
+                            required</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field class="full-width">
                         <input matInput placeholder="Role in the company *" name="role" formControlName="role">
+                        <mat-error *ngIf="validation.checkAllErrors(controls.addedOn, 'required')">This field is
+                            required</mat-error>
                     </mat-form-field>
                 </div>
-            </mat-card-content>           
+            </mat-card-content>
+            <mat-card-content class="mat-card-content-photo">
+                <div class="preparePhoto" *ngIf="controls.profileUrl.value; else noPhoto">
+                    <div class="photo">
+                        <img [src]="controls.profileUrl.value" [alt]="controls.profileUrl.value">
+                    </div>
+                </div>
+            </mat-card-content>
         </mat-card>
         <div class="footer-bar">
-            <button color="warn" mat-button>
+            <button (click)="routeUserList()" color="warn" mat-button>
                 <mat-icon>arrow_back</mat-icon>
                 Back
             </button>
@@ -48,3 +63,11 @@
         </div>
     </form>
 </div>
+
+<ng-template #noPhoto>   
+    <div class="preparePhoto">
+        <div class="photo">
+            <img [src]="defaultPhoto" alt="Default photo">
+        </div>
+    </div>
+</ng-template>

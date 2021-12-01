@@ -40,3 +40,4 @@ Installed:
     ngIf on list users
     Tip on hover buttons
     Put filters on list users
+    Change the modal's color to remove user 

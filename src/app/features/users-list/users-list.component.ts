@@ -43,7 +43,8 @@ export class UsersListComponent implements OnInit {
       title: `Are you sure to delete "${user.name}" ?`,
       description: "If you want to continue, please press \"Yes\"",
       negativeButton: "No",
-      positiveButton: "Yes"
+      positiveButton: "Yes",
+      hasNegativeButton: true
     }
 
     const dialogRef = this.dialog.open(AlertComponent, { width: '500px', data })

@@ -23,7 +23,14 @@
       "email": "teste@teste.com",
       "addedOn": "2015-04-15T03:00:00.000Z",
       "role": "Marketing"
+    },
+    {
+      "name": "Rafael Bertolim Pavanello",
+      "profileUrl": "https://avatars.githubusercontent.com/u/53226501?v=4",
+      "email": "rpavanello97@hotmail.com",
+      "addedOn": "2021-12-01T03:00:00.000Z",
+      "role": "Developer",
+      "id": 4
     }
   ]
 }
-

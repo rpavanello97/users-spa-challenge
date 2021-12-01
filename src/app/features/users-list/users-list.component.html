@@ -5,8 +5,10 @@
         <label class="user-bar-actions">Actions</label>
     </div>
     <div class="user" *ngFor="let user of users">
-        <div class="photo">
-            <img [src]="user.profileUrl" [alt]="user.name">
+        <div class="preparePhoto">
+            <div class="photo">
+                <img [src]="user.profileUrl" [alt]="user.name">
+            </div>
         </div>
         <div class="informations">
             <label class="name"> {{ user.name }} </label>

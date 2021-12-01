@@ -19,11 +19,14 @@ export class UserService {
 
   get(): Observable<User[]> {
     // configParams: ConfigParams
-    return this.http.get<User[]>(url);
+    return this.http.get<User[]>(url)
   }
 
   deleteById(id:number): Observable<void> {
-    debugger;
-    return this.http.delete<void>(url+id);
+    return this.http.delete<void>(url+id)
+  }
+
+  save(user: User): Observable<void> {
+    return this.http.post<void>(url, user)
   }
 }
