@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersListComponent } from './features/users-list/users-list.component';
+
+
 import { UserModule } from './features/user.module';
 import { MaterialModule } from './shared/material/material.module';
 import { AlertComponent } from './shared/components/alert/alert.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AlertComponent } from './shared/components/alert/alert.component';
     MaterialModule,
     UserModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

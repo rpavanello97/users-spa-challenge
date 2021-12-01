@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="user-bar">
+        <label>Register new user</label>
+    </div>
+    <form class="user" autocomplete="off" novalidate [formGroup]="user" (ngSubmit)="submit()">
+        <mat-card>
+            <mat-card-content>
+                <div>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Name *" name="name" formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Photo url *" name="profileUrl" formControlName="profileUrl">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="full-width">
+                        <mat-label>E-mail *</mat-label>
+                        <input matInput placeholder="example@example.com" name="email" formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Added on *"
+                            name="addedOn" formControlName="addedOn" readonly>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker color="accent"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Role in the company *" name="role" formControlName="role">
+                    </mat-form-field>
+                </div>
+            </mat-card-content>           
+        </mat-card>
+        <div class="footer-bar">
+            <button color="warn" mat-button>
+                <mat-icon>arrow_back</mat-icon>
+                Back
+            </button>
+            <button type="submit" color="primary" mat-raised-button>
+                <mat-icon>save_alt</mat-icon>
+                Save
+            </button>
+        </div>
+    </form>
+</div>

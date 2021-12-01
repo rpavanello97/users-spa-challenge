@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 import { AlertComponent } from 'src/app/shared/components/alert/alert.component';
 import { User } from 'src/app/shared/models/user.model';
 import { UserService } from '../services/user.service';
 import { AlertData } from 'src/app/shared/models/alert-data.model';
+
 
 @Component({
   selector: 'app-users-list',
@@ -18,7 +20,8 @@ export class UsersListComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,11 +36,11 @@ export class UsersListComponent implements OnInit {
     });
   }
 
-  deleteUser(id: number): void {
-    this.id = id
+  deleteUser(user: User): void {
+    this.id = user.id
 
     const data: AlertData = {
-      title: "Are you sure to delete the User?",
+      title: `Are you sure to delete "${user.name}" ?`,
       description: "If you want to continue, please press \"Yes\"",
       negativeButton: "No",
       positiveButton: "Yes"
@@ -51,9 +54,11 @@ export class UsersListComponent implements OnInit {
           this.users = this.users.filter(item => item.id !== this.id)
           //this.getUsers()
         });
-      } else {
-        alert("Recused")
       }
     });
+  }
+
+  registerUser(): void {
+    this.router.navigateByUrl('register')
   }
 }

@@ -26,13 +26,13 @@
             </button>
         </div>
         <div>
-            <button color="warn" (click)="deleteUser(user.id)" mat-stroked-button>
+            <button color="warn" (click)="deleteUser(user)" mat-stroked-button>
                 <mat-icon>person_remove</mat-icon>                
             </button>
         </div>        
     </div>
     <div class="footer-bar">
-        <button color="accent" mat-raised-button>
+        <button color="accent" (click)="registerUser()" mat-raised-button>
             <mat-icon>person_add</mat-icon>
         </button>
     </div>

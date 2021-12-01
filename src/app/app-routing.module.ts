@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { RegisterUserComponent } from './features/register-user/register-user.component';
 import { UsersListComponent } from './features/users-list/users-list.component';
 
 const routes: Routes = [
@@ -11,6 +13,10 @@ const routes: Routes = [
   {
     path:'users',
     component: UsersListComponent
+  },
+  {
+    path:'register',
+    component: RegisterUserComponent
   },
   { path: '**', redirectTo: 'users' },
 ];

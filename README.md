@@ -31,3 +31,12 @@ Installed:
     Angular Material
     Json Server
     Images got from https://unsplash.com/s/photos/person
+
+
+# PROJECT IN PROGRESS
+
+    Put pagination
+    Put more register on json-server
+    ngIf on list users
+    Tip on hover buttons
+    Put filters on list users
