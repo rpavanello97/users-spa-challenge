@@ -3,7 +3,7 @@
         <label>Register new user</label>
     </div>
     <form class="user" autocomplete="off" novalidate [formGroup]="user" (ngSubmit)="submit()">
-        <mat-card>
+        <mat-card class="mat-card-class">
             <mat-card-content class="mat-card-content-fields full-width">
                 <div>
                     <mat-form-field class="full-width">
@@ -44,7 +44,10 @@
                 </div>
             </mat-card-content>
             <mat-card-content class="mat-card-content-photo">
-                <div class="preparePhoto" *ngIf="controls.profileUrl.value; else noPhoto">
+                <div>
+                    <h3>Photo Preview</h3>
+                </div>
+                <div class="preparePhoto" *ngIf="controls.profileUrl.value; else noPhoto">                    
                     <div class="photo">
                         <img [src]="controls.profileUrl.value" [alt]="controls.profileUrl.value">
                     </div>
@@ -52,13 +55,11 @@
             </mat-card-content>
         </mat-card>
         <div class="footer-bar">
-            <button (click)="routeUserList()" color="warn" mat-button>
+            <button (click)="routeUserList()" color="accent" mat-fab matTooltip="Go back" matTooltipClass="example-tooltip-yellow">
                 <mat-icon>arrow_back</mat-icon>
-                Back
             </button>
-            <button type="submit" color="primary" mat-raised-button>
+            <button type="submit" color="primary" mat-fab matTooltip="Save" matTooltipClass="example-tooltip-yellow">
                 <mat-icon>save_alt</mat-icon>
-                Save
             </button>
         </div>
     </form>

@@ -3,5 +3,7 @@ export interface AlertData {
     description: string,
     negativeButton?: string,
     positiveButton: string,
-    hasNegativeButton?: boolean
+    hasNegativeButton?: boolean,
+    negativeColor?: string,
+    positiveColor?: string,
 }

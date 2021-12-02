@@ -16,6 +16,8 @@ export class AlertComponent implements OnInit {
     negativeButton: "Set the value",
     positiveButton: "Set the Value",
     hasNegativeButton: false,
+    negativeColor: "primary",
+    positiveColor: "primary"
   }
 
   constructor(
@@ -30,6 +32,8 @@ export class AlertComponent implements OnInit {
       this.alertData.negativeButton = this.data.negativeButton || this.alertData.negativeButton;
       this.alertData.positiveButton = this.data.positiveButton || this.alertData.positiveButton;
       this.alertData.hasNegativeButton = this.data.hasNegativeButton || this.alertData.hasNegativeButton;
+      this.alertData.negativeColor = this.data.negativeColor || this.alertData.negativeColor;
+      this.alertData.positiveColor = this.data.positiveColor || this.alertData.positiveColor;
     }
   }
 }

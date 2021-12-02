@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,8 @@ import { AlertData } from 'src/app/shared/models/alert-data.model';
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.scss']
+  styleUrls: ['./users-list.component.scss'],
+  //encapsulation: ViewEncapsulation.None //To tooltip work
 })
 export class UsersListComponent implements OnInit {
 
@@ -44,7 +45,9 @@ export class UsersListComponent implements OnInit {
       description: "If you want to continue, please press \"Yes\"",
       negativeButton: "No",
       positiveButton: "Yes",
-      hasNegativeButton: true
+      hasNegativeButton: true,
+      negativeColor: "primary",
+      positiveColor: "warn"
     }
 
     const dialogRef = this.dialog.open(AlertComponent, { width: '500px', data })

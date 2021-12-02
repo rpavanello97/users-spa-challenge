@@ -35,7 +35,7 @@
     margin-bottom: 10px;
 }
 
-mat-card {
+.mat-card-class {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,16 @@ mat-card {
 .mat-card-content-photo {
     //border: 2px solid black;
     margin-left: 1rem;
-    width: 50%;   
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div h3 {
+        font-weight: bold;
+        font-family: Poppins, sans-serif;
+    }
 }
 
 .footer-bar {
@@ -85,4 +94,8 @@ mat-card {
 
 .full-width {
     width: 100%;
+}
+
+.example-tooltip-yellow {
+    background: #f0cd09;
 }

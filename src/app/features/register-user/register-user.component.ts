@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -12,7 +12,8 @@ import { ValidateErrorsService } from '../services/validate-fields.service'
 @Component({
   selector: 'app-register-user',
   templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.scss']
+  styleUrls: ['./register-user.component.scss'],
+  //encapsulation: ViewEncapsulation.None //To tooltip work
 })
 export class RegisterUserComponent implements OnInit {
 
@@ -43,6 +44,11 @@ export class RegisterUserComponent implements OnInit {
     }
 
     const userSave = this.user.getRawValue()
+    debugger
+    if (!userSave.profileUrl) {
+      userSave.profileUrl = this.defaultPhoto
+    }
+
     this.save(userSave)
   }
 
