@@ -18,6 +18,8 @@ export class UsersListComponent implements OnInit {
 
   users: User[] = []
   id!: number
+  footerMsg: string = "Developed during \"Angular Bootcamp\" from Diggital Innovation One by Rafael Bertolim Pavanello"
+  noUsersMsg: string = "No users to show"
 
   constructor(
     private userService: UserService,

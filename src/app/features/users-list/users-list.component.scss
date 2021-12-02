@@ -33,9 +33,8 @@
 
 .footer-bar {
     background-color: lightgray;
-    padding: 0.5rem;
-    padding-right: 4.25rem;
-    margin-top: 1rem;
+    padding: 0.5rem 4.25rem 0.5rem 0.5rem; //superopr direita inferior esquerda    
+    margin: 1rem 0rem; //vertical horizontal
     
     display: flex;
     align-items: center;
@@ -115,4 +114,12 @@
   
 .example-tooltip-yellow {
 background: #f0cd09;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    padding: 2rem;
 }

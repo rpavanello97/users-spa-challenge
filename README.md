@@ -35,7 +35,8 @@ Installed:
 
 # PROJECT IN PROGRESS
 
+    Params service
+    Edit page
     Put pagination
-    Put more register on json-server
-    ngIf on list users
     Put filters on list users
+    

@@ -41,19 +41,31 @@
                 <mat-icon>person_add</mat-icon>
             </button>
         </div>
+        <hr>
+        <div class="footer">
+            <label>
+                {{ footerMsg }}
+            </label>
+        </div>
     </div>
 </div>
 
-<ng-template #noUsers>    
-        <div class="wrapper">
-            <div class="user-bar no-users">
-                <label>No users to show</label>
-            </div>
-            <div class="footer-bar">
-                <button color="accent" (click)="registerUser()" mat-raised-button mat-stroked-button
-                    matTooltip="Add new user" matTooltipClass="example-tooltip-yellow">
-                    <mat-icon>person_add</mat-icon>
-                </button>
-            </div>
-        </div>    
+<ng-template #noUsers>
+    <div class="wrapper">
+        <div class="user-bar no-users">
+            <label> {{ noUsersMsg }}</label>
+        </div>
+        <div class="footer-bar">
+            <button color="accent" (click)="registerUser()" mat-raised-button mat-stroked-button
+                matTooltip="Add new user" matTooltipClass="example-tooltip-yellow">
+                <mat-icon>person_add</mat-icon>
+            </button>
+        </div>
+        <hr>
+        <div class="footer">
+            <label>
+                {{ footerMsg }}
+            </label>
+        </div>
+    </div>
 </ng-template>
