@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
@@ -14,16 +14,20 @@ const url = "http://localhost:3000/users/"
 export class UserService {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   get(): Observable<User[]> {
-    // configParams: ConfigParams
+    // let params = new HttpParams().set('id', id.toString())
     return this.http.get<User[]>(url)
   }
 
-  deleteById(id:number): Observable<void> {
-    return this.http.delete<void>(url+id)
+  getById(id: number): Observable<User> {    
+    return this.http.get<User>(url + id)
+  }
+
+  deleteById(id: number): Observable<void> {
+    return this.http.delete<void>(url + id)
   }
 
   save(user: User): Observable<void> {

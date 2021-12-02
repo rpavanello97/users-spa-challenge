@@ -39,7 +39,7 @@ export class UsersListComponent implements OnInit {
     });
   }
 
-  deleteUser(user: User): void {
+  delete(user: User): void {
     this.id = user.id
 
     const data: AlertData = {
@@ -66,5 +66,9 @@ export class UsersListComponent implements OnInit {
 
   registerUser(): void {
     this.router.navigateByUrl('register')
+  }
+
+  edit(user: User): void {
+    this.router.navigateByUrl('register/' + user.id)
   }
 }

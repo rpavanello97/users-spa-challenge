@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterUserComponent } from './features/register-user/register-user.component';
@@ -16,7 +16,16 @@ const routes: Routes = [
   },
   {
     path:'register',
-    component: RegisterUserComponent
+    children : [
+      {
+        path:'',
+        component: RegisterUserComponent
+      },
+      {
+        path:':id',
+        component: RegisterUserComponent
+      },      
+    ]
   },
   { path: '**', redirectTo: 'users' },
 ];

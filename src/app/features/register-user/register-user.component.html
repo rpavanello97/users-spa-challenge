@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" *ngIf="user">
     <div class="user-bar">
-        <label>Register new user</label>
+        <label> {{ userBarMsg }} </label>
     </div>
     <form class="user" autocomplete="off" novalidate [formGroup]="user" (ngSubmit)="submit()">
         <mat-card class="mat-card-class">
@@ -38,7 +38,7 @@
                 <div>
                     <mat-form-field class="full-width">
                         <input matInput placeholder="Role in the company *" name="role" formControlName="role">
-                        <mat-error *ngIf="validation.checkAllErrors(controls.addedOn, 'required')">This field is
+                        <mat-error *ngIf="validation.checkAllErrors(controls.role, 'required')">This field is
                             required</mat-error>
                     </mat-form-field>
                 </div>

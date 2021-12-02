@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { User } from 'src/app/shared/models/user.model';
 import { UserService } from '../services/user.service';
@@ -19,12 +19,15 @@ export class RegisterUserComponent implements OnInit {
 
   user!: FormGroup
   defaultPhoto: string = 'https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg'
+  userBarMsg : string = ""
+  id!: number
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router,
     private dialog: MatDialog,
+    private activatedRoute: ActivatedRoute,
     public validation: ValidateErrorsService
   ) { }
 
@@ -33,18 +36,26 @@ export class RegisterUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.createForm(this.generateBlankUser())
+    this.id = Number(this.activatedRoute.snapshot.paramMap.get('id'))
+
+    if (this.id) {
+      this.userBarMsg = 'Edit user'
+      this.getById(this.id)
+    } else {
+      this.userBarMsg = 'Register new user'
+      this.createForm(this.generateBlankUser())
+    }
   }
 
   submit(): void {
     this.user.markAllAsTouched()
 
-    if(this.user.invalid) {
+    if (this.user.invalid) {
       return
     }
 
     const userSave = this.user.getRawValue()
-    debugger
+    
     if (!userSave.profileUrl) {
       userSave.profileUrl = this.defaultPhoto
     }
@@ -52,21 +63,21 @@ export class RegisterUserComponent implements OnInit {
     this.save(userSave)
   }
 
-  routeUserList() : void {
+  routeUserList(): void {
     this.router.navigateByUrl('/users')
   }
 
-  getFormControl(name:string): AbstractControl {
+  getFormControl(name: string): AbstractControl {
     return this.user.controls[name]
   }
 
-  private createForm(user: User): void {
+  private createForm(userObj: User): void {
     this.user = this.formBuilder.group({
-      name: [user.name, [Validators.required]],
-      profileUrl: [user.profileUrl],
-      email: [user.email, [Validators.required]],
-      addedOn: [user.addedOn, [Validators.required]],
-      role: [user.role, [Validators.required]]
+      name: [userObj.name, [Validators.required]],
+      profileUrl: [userObj.profileUrl],
+      email: [userObj.email, [Validators.required]],
+      addedOn: [userObj.addedOn, [Validators.required]],
+      role: [userObj.role, [Validators.required]]
     })
   }
 
@@ -79,10 +90,10 @@ export class RegisterUserComponent implements OnInit {
       addedOn: null,
       role: null
     } as unknown as User
-  } 
-  
+  }
+
   private save(user: User): void {
-    this.userService.save(user).subscribe( result => {
+    this.userService.save(user).subscribe(result => {
       const data: AlertData = {
         title: `Suceess`,
         description: "Your data has been successfully saved.",
@@ -106,4 +117,11 @@ export class RegisterUserComponent implements OnInit {
     })
   }
 
+  private getById(id: number): void {
+    this.userService.getById(this.id).subscribe((userEdit: User) => {
+      this.createForm(userEdit)
+    }, (error: Error) => {
+      alert("Error to get the user: " + "\"" + error.message + "\"")
+    })
+  }
 }

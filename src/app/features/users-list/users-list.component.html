@@ -24,12 +24,12 @@
                 <label> {{ user.role }} </label>
             </div>
             <div class="buttons">
-                <button color="primary" mat-raised-button matTooltip="Edit" matTooltipClass="example-tooltip-yellow">
+                <button color="primary" (click)="edit(user)" mat-raised-button matTooltip="Edit" matTooltipClass="example-tooltip-yellow">
                     <mat-icon>mode_edit</mat-icon>
                 </button>
             </div>
             <div class="buttons">
-                <button color="warn" (click)="deleteUser(user)" mat-stroked-button matTooltip="Delete"
+                <button color="warn" (click)="delete(user)" mat-stroked-button matTooltip="Delete"
                     matTooltipClass="example-tooltip-yellow">
                     <mat-icon>person_remove</mat-icon>
                 </button>
