@@ -36,7 +36,6 @@ Installed:
 # PROJECT IN PROGRESS
 
     Params service
-    Put save edit on page
     Put pagination
     Put filters on list users
     Put footer on root

@@ -19,7 +19,7 @@ export class RegisterUserComponent implements OnInit {
 
   user!: FormGroup
   defaultPhoto: string = 'https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg'
-  userBarMsg : string = ""
+  userBarMsg: string = ""
   id!: number
 
   constructor(
@@ -55,12 +55,17 @@ export class RegisterUserComponent implements OnInit {
     }
 
     const userSave = this.user.getRawValue()
-    
+
     if (!userSave.profileUrl) {
       userSave.profileUrl = this.defaultPhoto
     }
 
-    this.save(userSave)
+    if (this.id) {
+      userSave.id = this.id
+      this.edit(userSave)
+    } else {
+      this.save(userSave)
+    }    
   }
 
   routeUserList(): void {
@@ -122,6 +127,27 @@ export class RegisterUserComponent implements OnInit {
       this.createForm(userEdit)
     }, (error: Error) => {
       alert("Error to get the user: " + "\"" + error.message + "\"")
+    })
+  }
+
+  private edit(user: User): void {
+    this.userService.edit(user).subscribe(result => {
+      const data: AlertData = {
+        title: `Suceess`,
+        description: "Your data has been successfully edited.",
+        positiveButton: "Nice"
+      }
+
+      this.dialog.open(AlertComponent, { width: '500px', data })
+    }, (error: Error) => {
+      const data: AlertData = {
+        title: `Failed`,
+        description: "Your data has NOT been saved.",
+        positiveButton: "Oh no!!!",
+        hasNegativeButton: false
+      }
+
+      this.dialog.open(AlertComponent, { width: '500px', data })
     })
   }
 }

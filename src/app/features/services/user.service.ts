@@ -22,7 +22,7 @@ export class UserService {
     return this.http.get<User[]>(url)
   }
 
-  getById(id: number): Observable<User> {    
+  getById(id: number): Observable<User> {
     return this.http.get<User>(url + id)
   }
 
@@ -32,5 +32,9 @@ export class UserService {
 
   save(user: User): Observable<void> {
     return this.http.post<void>(url, user)
+  }
+
+  edit(user: User): Observable<void> {
+    return this.http.put<void>(url + user.id, user)
   }
 }
