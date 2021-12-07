@@ -1,41 +1,44 @@
-# UsersSpaChallange
+# Angular SPA Challange
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+"Angular SPA Challange " it's an application that was created where it is possible to register, list, edit, and remove "Users". The application was developed during the SPA Challange from Digial Innovation One.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    1. Clone the repository `git clone git@github.com:rpavanello97/users-spa-challenge.git`
+    2. Install all dependencies with `npm install` command
+    3. run `ng serve` to execute the application. Access a url `http://localhost:4200/`.
 
-## Code scaffolding
+## Back-end simulation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Execute `npm install -g json-server` to install JSON server globally. After the installation, open the project folder and run `json-server --watch db.json`. Then, it is possible to access URL `http://localhost:3000/` and run all HTTP requisition.
 
-## Build
+## Technologies  and Libraries used during the development
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" />    
+- <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />     
+- <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+- <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
+- Angular Material
+- JSON Server
+- RxJS
+- Images got from https://unsplash.com/s/photos/person
 
 
-Installed:
-    Angular Material
-    Json Server
-    Images got from https://unsplash.com/s/photos/person
+# To do
+ - Params service
+ - Put pagination
+ - Put filters on list users
+ - Put footer on root
 
 
-# PROJECT IN PROGRESS
+## Teaser
 
-    Params service
-    Put pagination
-    Put filters on list users
-    Put footer on root
+Home page, removing a user:
+![angular-spa](https://user-images.githubusercontent.com/53226501/145026667-36147fc5-ca22-43c8-907c-37c7b3de7732.gif)
+
+Editing a user:
+![angular-spa-2](https://user-images.githubusercontent.com/53226501/145026932-3995b8cc-cc2b-4740-86bc-8244b8858a34.gif)
+
+Creating a new one:
+![angular-spa-3](https://user-images.githubusercontent.com/53226501/145027098-a3de643c-8700-4258-8f36-3fdc3bb1a8ea.gif)
+

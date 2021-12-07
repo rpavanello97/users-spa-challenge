@@ -25,11 +25,11 @@
       "role": "Marketing"
     },
     {
-      "name": "Rafael Pavanello",
+      "name": "Rafael Bertolim Pavanello",
       "profileUrl": "https://avatars.githubusercontent.com/u/53226501?v=4",
       "email": "rpavanello97@hotmail.com",
       "addedOn": "2021-12-01T03:00:00.000Z",
-      "role": "Developer III",
+      "role": "Developer I",
       "id": 4
     },
     {
@@ -89,11 +89,11 @@
       "id": 11
     },
     {
-      "name": "Kurtis Weissnat",
-      "profileUrl": "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      "email": "Telly.Hoeger@billy.biz",
-      "addedOn": "2021-12-01T03:00:00.000Z",
-      "role": "Developer II",
+      "name": "Rafael Bertolim Pavanello",
+      "profileUrl": "https://icon-library.com/images/default-profile-icon/default-profile-icon-24.jpg",
+      "email": "rpavanello97@hotmail.com",
+      "addedOn": "2021-12-07T03:00:00.000Z",
+      "role": "Teste",
       "id": 12
     }
   ]
